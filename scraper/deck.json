@@ -1,0 +1,54 @@
+{
+  "champweek": "4",
+  "picks": [
+    {
+      "date": "2026-05-04",
+      "joueur": "JADEN MCDANIELS",
+      "score": 24,
+      "picked": true,
+      "teamColor": "rgb(12, 35, 64)"
+    },
+    {
+      "date": "2026-05-05",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    },
+    {
+      "date": "2026-05-06",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    },
+    {
+      "date": "2026-05-07",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    },
+    {
+      "date": "2026-05-08",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    },
+    {
+      "date": "2026-05-09",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    },
+    {
+      "date": "2026-05-10",
+      "joueur": null,
+      "score": null,
+      "picked": false,
+      "teamColor": null
+    }
+  ]
+}

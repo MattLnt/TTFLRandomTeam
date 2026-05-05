@@ -1,0 +1,118 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Member {
+  id              String   @id @default(cuid())
+  pseudo          String   @unique
+  rank            Int?
+  totalScore      Int      @default(0)
+  avatar          String?
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  picks           Pick[]
+  deckPicks       DeckPick[]
+}
+
+model Pick {
+  id        String   @id @default(cuid())
+  memberId  String
+  date      String
+  joueur    String
+  score     Int      @default(0)
+  bonus     Boolean  @default(false)
+  pts       Int      @default(0)
+  reb       Int      @default(0)
+  ast       Int      @default(0)
+  stl       Int      @default(0)
+  blk       Int      @default(0)
+  ftm       Int      @default(0)
+  fgm       Int      @default(0)
+  fg3m      Int      @default(0)
+  malus     Int      @default(0)
+  createdAt DateTime @default(now())
+
+  member    Member   @relation(fields: [memberId], references: [id])
+
+  @@unique([memberId, date])
+}
+
+model DeckPick {
+  id         String   @id @default(cuid())
+  memberId   String
+  date       String
+  joueur     String?
+  champweek  String?
+  picked     Boolean  @default(false)
+  teamColor  String?
+  score      Int?
+  createdAt  DateTime @default(now())
+
+  member     Member   @relation(fields: [memberId], references: [id])
+
+  @@unique([memberId, date])
+}
+
+model NBAPlayer {
+  id           String   @id @default(cuid())
+  bdlId        Int      @unique
+  nbaId        Int?
+  firstName    String
+  lastName     String
+  position     String?
+  teamId       Int?
+  teamName     String?
+  teamAbbr     String?
+  jerseyNumber String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  gameLogs     GameLog[]
+}
+
+model GameLog {
+  id        String   @id @default(cuid())
+  playerId  String
+  bdlGameId Int
+  date      String
+  matchup   String?
+  isHome    Boolean  @default(true)
+  pts       Int      @default(0)
+  reb       Int      @default(0)
+  ast       Int      @default(0)
+  stl       Int      @default(0)
+  blk       Int      @default(0)
+  ftm       Int      @default(0)
+  fta       Int      @default(0)
+  fgm       Int      @default(0)
+  fga       Int      @default(0)
+  fg3m      Int      @default(0)
+  tov       Int      @default(0)
+  ttflScore Int      @default(0)
+  createdAt DateTime @default(now())
+
+  player    NBAPlayer @relation(fields: [playerId], references: [id])
+
+  @@unique([playerId, bdlGameId])
+}
+
+model NBAGame {
+  id              String   @id @default(cuid())
+  bdlId           Int      @unique
+  date            String
+  homeTeamId      Int
+  homeTeamName    String
+  homeTeamAbbr    String
+  visitorTeamId   Int
+  visitorTeamName String
+  visitorTeamAbbr String
+  status          String?
+  datetime        String?
+  postseason      Boolean  @default(false)
+  createdAt       DateTime @default(now())
+}
