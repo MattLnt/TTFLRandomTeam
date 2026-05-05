@@ -29,7 +29,7 @@ async function scrapeHistorique(page, sessionCookies) {
         fg3m:   parseInt(cells[9].innerText) || 0,
         malus:  parseInt(cells[10].innerText) || 0,
         score:  parseInt(cells[11].innerText) || 0,
-        bonus,
+        bonus, 
       });
     });
 
