@@ -38,7 +38,7 @@ export default async function Home() {
         maxWidth: '1200px',
         margin: '0 auto',
       }}>
-        {members.map((member) => {
+        {members.map((member: any) => {
           const scraperMember = scraperData.members[member.pseudo]
           
           // Pick du jour depuis le deck
