@@ -144,7 +144,7 @@ export default async function Home() {
                   </>
                 ) : (
                   <div style={{ color: '#d75422', fontSize: '13px', fontWeight: 600 }}>
-                    ❌ Pas encore pické
+                    ❌ Pas encore de pick
                   </div>
                 )}
               </div>
