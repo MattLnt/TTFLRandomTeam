@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-05-08T11:21:50.145Z",
+  "updatedAt": "2026-05-08T17:53:07.359Z",
   "members": {
     "Randomsson": {
       "historique": [
@@ -337,10 +337,11 @@
           },
           {
             "date": "2026-05-08",
-            "joueur": "NAZ REID",
+            "joueur": "TERRENCE SHANNON JR.",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(12, 35, 64)"
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -718,10 +719,11 @@
           },
           {
             "date": "2026-05-08",
-            "joueur": "VJ EDGECOMBE",
+            "joueur": "KELLY OUBRE JR.",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)"
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -1102,7 +1104,8 @@
             "joueur": null,
             "score": null,
             "picked": false,
-            "teamColor": null
+            "teamColor": null,
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -1861,10 +1864,11 @@
           },
           {
             "date": "2026-05-08",
-            "joueur": null,
+            "joueur": "JULIUS RANDLE",
             "score": null,
-            "picked": false,
-            "teamColor": null
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -2245,7 +2249,8 @@
             "joueur": null,
             "score": null,
             "picked": false,
-            "teamColor": null
+            "teamColor": null,
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -2623,10 +2628,11 @@
           },
           {
             "date": "2026-05-08",
-            "joueur": "ANTHONY EDWARDS",
+            "joueur": "JULIUS RANDLE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(12, 35, 64)"
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -3388,7 +3394,8 @@
             "joueur": null,
             "score": null,
             "picked": false,
-            "teamColor": null
+            "teamColor": null,
+            "bonus": false
           },
           {
             "date": "2026-05-09",
@@ -3769,7 +3776,8 @@
             "joueur": "VJ EDGECOMBE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)"
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           },
           {
             "date": "2026-05-09",
