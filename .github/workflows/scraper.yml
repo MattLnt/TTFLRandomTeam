@@ -2,8 +2,9 @@ name: TTFL Scraper
 
 on:
   schedule:
-    - cron: '15 12-17 * * *'
-    - cron: '15,45 17-22 * * *'
+    - cron: '0 12-17 * * *'      # 14h-19h FR toutes les heures
+    - cron: '30 17-21 * * *'     # 19h30-23h30 FR toutes les 30 min
+    - cron: '0 18-21 * * *'      # 20h-23h FR
   workflow_dispatch:
 
 jobs:
