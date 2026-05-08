@@ -40,10 +40,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": null,
+            "joueur": "JADEN MCDANIELS",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -142,10 +142,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": null,
+            "joueur": "PAUL GEORGE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -171,5 +171,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-08T20:45:37.835Z"
+  "updatedAt": "2026-05-08T21:19:07.242Z"
 }
