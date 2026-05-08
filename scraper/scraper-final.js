@@ -7,7 +7,12 @@ const PAGE_URL = 'https://fantasy.trashtalk.co/login/';
 const COOKIES_FILE = './cookies.json';
 const MEMBERS_FILE = './members.json';
 const CURRENT_CHAMPWEEK = '4';
-const DELAY_BETWEEN_MEMBERS = 30000; // 30 secondes entre chaque membre
+const DELAY_BETWEEN_MEMBERS = 30000;
+
+function getTodayDate() {
+  const now = new Date();
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
 
 async function solveTurnstile() {
   console.log('🔄 Envoi du captcha à 2captcha...');
@@ -31,28 +36,20 @@ async function solveTurnstile() {
   throw new Error('Timeout captcha');
 }
 
-async function loginMember(browser, member) {
-  console.log(`\n🔐 Connexion pour ${member.pseudo}...`);
+async function loginAndGetTodayPick(browser, member) {
+  const today = getTodayDate();
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
   const client = await page.createCDPSession();
   await client.send('Network.clearBrowserCookies');
 
+  console.log(`🔐 Connexion pour ${member.pseudo}...`);
   await page.goto(PAGE_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#email', { timeout: 15000 });
 
-  await page.$eval('#email', el => el.value = '');
-  await page.$eval('#password', el => el.value = '');
-  await page.click('#email');
-  await new Promise(r => setTimeout(r, 500));
   await page.type('#email', member.email, { delay: 80 });
-  await page.click('#password');
-  await new Promise(r => setTimeout(r, 500));
   await page.type('#password', member.password, { delay: 80 });
-
-  const emailVal = await page.$eval('#email', el => el.value);
-  console.log(`📝 Email saisi: ${emailVal}`);
 
   const token = await solveTurnstile();
   await page.evaluate((token) => {
@@ -69,184 +66,55 @@ async function loginMember(browser, member) {
 
   console.log(`✅ ${member.pseudo} connecté !`);
 
-  await new Promise(r => setTimeout(r, 2000));
   await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await page.waitForSelector('#champweek', { timeout: 15000 }).catch(() => null);
+  await page.waitForSelector(`#deck${today}`, { timeout: 15000 }).catch(() => null);
 
-  const currentWeek = await page.evaluate(() => document.querySelector('#champweek')?.value || null);
-  console.log(`📅 champweek après login: ${currentWeek}`);
+  const todayPick = await page.evaluate((todayDate) => {
+    const div = document.querySelector(`#deck${todayDate}`);
+    if (!div) return null;
 
-  let deck = null;
-  if (currentWeek) {
-    await page.waitForSelector('[id^="deck202"]', { timeout: 15000 }).catch(() => null);
+    const labels = div.querySelectorAll('.counter-label');
+    const joueurText = labels[0]?.innerText?.trim();
+    const scoreEl = div.querySelector('[style*="Alfa Slab One"]');
+    const score = scoreEl?.innerText?.trim() || null;
+    const widgetContents = div.querySelectorAll('.widget-content');
+    const widgetContent = widgetContents[1] || widgetContents[0];
+    const bgColor = widgetContent?.style?.backgroundColor;
+    const bonusDiv = div.querySelector('.widget-content.padding-5');
+    const hasBonus = bonusDiv && bonusDiv.getAttribute('hidden') === null;
+    const isPicked = joueurText &&
+      !joueurText.toLowerCase().includes('choisir') &&
+      !joueurText.toLowerCase().includes('joueur') &&
+      joueurText !== '';
 
-    deck = await page.evaluate(() => {
-      const champweek = document.querySelector('#champweek')?.value;
-      const deckDivs = document.querySelectorAll('[id^="deck202"]');
-      const picks = [];
-      deckDivs.forEach(div => {
-        const date = div.id.replace('deck', '');
-        const labels = div.querySelectorAll('.counter-label');
-        const joueurText = labels[0]?.innerText?.trim();
-        const scoreEl = div.querySelector('[style*="Alfa Slab One"]');
-        const score = scoreEl?.innerText?.trim() || null;
-        const widgetContents = div.querySelectorAll('.widget-content');
-        const widgetContent = widgetContents[1] || widgetContents[0];
-        const bgColor = widgetContent?.style?.backgroundColor;
-        const isPicked = joueurText &&
-          !joueurText.toLowerCase().includes('choisir') &&
-          !joueurText.toLowerCase().includes('joueur') &&
-          joueurText !== '';
-        picks.push({
-          date,
-          joueur: isPicked ? joueurText : null,
-          score: score ? parseInt(score) : null,
-          picked: isPicked,
-          teamColor: isPicked ? bgColor : null,
-        });
-      });
-      return { champweek, picks };
-    });
-    console.log(`📦 Deck scrapé: ${deck?.picks?.length || 0} jours, ${deck?.picks?.filter(p => p.picked).length || 0} picks`);
-  }
+    return {
+      date: todayDate,
+      joueur: isPicked ? joueurText : null,
+      score: score ? parseInt(score) : null,
+      picked: !!isPicked,
+      teamColor: isPicked ? bgColor : null,
+      bonus: !!hasBonus && !!isPicked,
+    };
+  }, today);
 
-  const cookies = await page.cookies();
-  const sessionCookies = cookies.filter(c =>
-    ['PHPSESSID', 'TTFLhash', 'TTFLemail'].includes(c.name)
-  );
+  console.log(`📦 Pick: ${todayPick?.joueur || 'pas encore pické'}`);
 
   await page.close();
-  return { sessionCookies, deck };
-}
-
-async function scrapeWithCookies(browser, sessionCookies) {
-  const page = await browser.newPage();
-  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
-
-  await page.goto('https://fantasy.trashtalk.co/', { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await page.setCookie(...sessionCookies);
-
-  // Tester si la session est valide en allant sur le deck
-  await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await page.waitForSelector('#champweek', { timeout: 15000 }).catch(() => null);
-
-  const isLoggedIn = await page.evaluate(() => !!document.querySelector('#champweek'));
-  if (!isLoggedIn) {
-    await page.close();
-    return { sessionValid: false, deck: null, historique: null };
-  }
-
-  // Scraper le deck
-  await page.waitForSelector('[id^="deck202"]', { timeout: 15000 }).catch(() => null);
-  const deck = await page.evaluate(() => {
-    const champweek = document.querySelector('#champweek')?.value;
-    const deckDivs = document.querySelectorAll('[id^="deck202"]');
-    const picks = [];
-    deckDivs.forEach(div => {
-      const date = div.id.replace('deck', '');
-      const labels = div.querySelectorAll('.counter-label');
-      const joueurText = labels[0]?.innerText?.trim();
-      const scoreEl = div.querySelector('[style*="Alfa Slab One"]');
-      const score = scoreEl?.innerText?.trim() || null;
-      const widgetContents = div.querySelectorAll('.widget-content');
-      const widgetContent = widgetContents[1] || widgetContents[0];
-      const bgColor = widgetContent?.style?.backgroundColor;
-      const isPicked = joueurText &&
-        !joueurText.toLowerCase().includes('choisir') &&
-        !joueurText.toLowerCase().includes('joueur') &&
-        joueurText !== '';
-      picks.push({
-        date,
-        joueur: isPicked ? joueurText : null,
-        score: score ? parseInt(score) : null,
-        picked: isPicked,
-        teamColor: isPicked ? bgColor : null,
-      });
-    });
-    return { champweek, picks };
-  });
-
-  // Scraper l'historique
-  await page.goto('https://fantasy.trashtalk.co/?tpl=historique', { waitUntil: 'domcontentloaded', timeout: 60000 });
-  await page.waitForSelector('#MuTabme', { timeout: 20000 }).catch(() => null);
-
-  const historique = await page.evaluate(() => {
-    const rows = document.querySelectorAll('#MuTabme tbody tr');
-    const results = [];
-    rows.forEach(row => {
-      const cells = row.querySelectorAll('td, th');
-      if (cells.length < 12) return;
-      results.push({
-        date:   cells[0].innerText.trim(),
-        joueur: cells[1].innerText.trim(),
-        pts:    parseInt(cells[2].innerText) || 0,
-        reb:    parseInt(cells[3].innerText) || 0,
-        ast:    parseInt(cells[4].innerText) || 0,
-        stl:    parseInt(cells[5].innerText) || 0,
-        blk:    parseInt(cells[6].innerText) || 0,
-        ftm:    parseInt(cells[7].innerText) || 0,
-        fgm:    parseInt(cells[8].innerText) || 0,
-        fg3m:   parseInt(cells[9].innerText) || 0,
-        malus:  parseInt(cells[10].innerText) || 0,
-        score:  parseInt(cells[11].innerText) || 0,
-        bonus:  cells[12]?.innerText?.trim().toLowerCase() === 'oui',
-      });
-    });
-    return results;
-  });
-
-  await page.close();
-  return { sessionValid: true, deck, historique };
-}
-
-function loadCookies() {
-  if (fs.existsSync(COOKIES_FILE)) {
-    const content = fs.readFileSync(COOKIES_FILE, 'utf8');
-    if (!content || content.trim() === '') return {};
-    try { return JSON.parse(content); } catch { return {}; }
-  }
-  return {};
-}
-
-function saveCookies(cache) {
-  fs.writeFileSync(COOKIES_FILE, JSON.stringify(cache, null, 2));
-}
-
-function analyseBonus(allMembers) {
-  const bonusParMembre = {};
-  const bonusUtilisesGlobal = {};
-  for (const [pseudo, data] of Object.entries(allMembers)) {
-    const bonusUtilises = data.historique.filter(p => p.bonus).map(p => p.joueur);
-    bonusParMembre[pseudo] = bonusUtilises;
-    bonusUtilises.forEach(joueur => {
-      bonusUtilisesGlobal[joueur] = (bonusUtilisesGlobal[joueur] || 0) + 1;
-    });
-  }
-  const tousLesJoueurs = {};
-  for (const data of Object.values(allMembers)) {
-    data.historique.forEach(p => {
-      if (!tousLesJoueurs[p.joueur]) tousLesJoueurs[p.joueur] = { total: 0, count: 0 };
-      tousLesJoueurs[p.joueur].total += p.score;
-      tousLesJoueurs[p.joueur].count += 1;
-    });
-  }
-  const top10BonusDispo = Object.entries(tousLesJoueurs)
-    .map(([joueur, stats]) => ({
-      joueur,
-      moyenneScore: Math.round(stats.total / stats.count),
-      nbPicks: stats.count,
-      utiliseEnBonus: !!bonusUtilisesGlobal[joueur],
-    }))
-    .filter(j => !j.utiliseEnBonus)
-    .sort((a, b) => b.moyenneScore - a.moyenneScore)
-    .slice(0, 10);
-  return { bonusParMembre, top10BonusDispo };
+  return todayPick;
 }
 
 async function main() {
   const members = JSON.parse(fs.readFileSync(MEMBERS_FILE, 'utf8'));
-  const cookieCache = loadCookies();
-  const allMembers = {};
+  const today = getTodayDate();
+
+  let existing = { members: {} };
+  if (fs.existsSync('./all_members.json')) {
+    try {
+      existing = JSON.parse(fs.readFileSync('./all_members.json', 'utf8'));
+    } catch {}
+  }
+
+  const allMembers = { ...existing.members };
 
   const browser = await puppeteer.launch({
     headless: false,
@@ -256,80 +124,48 @@ async function main() {
   for (let i = 0; i < members.length; i++) {
     const member = members[i];
     console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
-    console.log(`👤 Traitement de ${member.pseudo}`);
+    console.log(`👤 ${member.pseudo}`);
 
     try {
-      let sessionCookies = cookieCache[member.pseudo];
-      let deck = null;
-      let historique = null;
+      const todayPick = await loginAndGetTodayPick(browser, member);
 
-      // Essayer d'abord avec les cookies existants
-      if (sessionCookies && sessionCookies.length > 0) {
-        console.log(`🍪 Test des cookies existants...`);
-        const result = await scrapeWithCookies(browser, sessionCookies);
-        
-        if (result.sessionValid) {
-          console.log(`✅ Cookies valides — pas besoin de relogin`);
-          deck = result.deck;
-          historique = result.historique;
-        } else {
-          console.log(`⚠️  Cookies expirés — login requis`);
-          sessionCookies = null;
-        }
-      }
+      const existingMember = allMembers[member.pseudo] || { historique: [], deck: { picks: [] }, bonusUtilises: [], joueursUtilises: [] };
 
-      // Si pas de cookies ou cookies invalides, login complet
-      if (!sessionCookies || !historique) {
-        const loginResult = await loginMember(browser, member);
-        sessionCookies = loginResult.sessionCookies;
-        deck = loginResult.deck;
-        cookieCache[member.pseudo] = sessionCookies;
-        saveCookies(cookieCache);
-
-        // Récupérer historique après login
-        const result = await scrapeWithCookies(browser, sessionCookies);
-        historique = result.historique;
-        if (!deck) deck = result.deck;
+      let deckPicks = existingMember.deck?.picks || [];
+      const existingTodayIndex = deckPicks.findIndex(p => p.date === today);
+      if (existingTodayIndex >= 0) {
+        deckPicks[existingTodayIndex] = todayPick || deckPicks[existingTodayIndex];
+      } else if (todayPick) {
+        deckPicks.push(todayPick);
       }
 
       allMembers[member.pseudo] = {
-        historique: historique || [],
-        deck: deck || {},
-        bonusUtilises: (historique || []).filter(p => p.bonus).map(p => ({ joueur: p.joueur, date: p.date, score: p.score })),
-        joueursUtilises: [...new Set((historique || []).map(p => p.joueur))],
+        ...existingMember,
+        deck: { ...existingMember.deck, picks: deckPicks },
       };
 
-      console.log(`✅ ${member.pseudo} : ${historique?.length || 0} picks, ${allMembers[member.pseudo].bonusUtilises.length} bonus`);
+      console.log(`✅ ${member.pseudo} OK`);
 
     } catch (err) {
       console.log(`❌ Erreur pour ${member.pseudo} : ${err.message}`);
-      allMembers[member.pseudo] = { historique: [], deck: {}, bonusUtilises: [], joueursUtilises: [] };
     }
 
-    // Attendre 30 secondes avant le prochain membre (sauf le dernier)
     if (i < members.length - 1) {
-      console.log(`⏸️  Pause de ${DELAY_BETWEEN_MEMBERS / 1000}s avant le prochain membre...`);
+      console.log(`⏸️  Pause ${DELAY_BETWEEN_MEMBERS / 1000}s...`);
       await new Promise(r => setTimeout(r, DELAY_BETWEEN_MEMBERS));
     }
   }
 
   await browser.close();
 
-  const { bonusParMembre, top10BonusDispo } = analyseBonus(allMembers);
-
   const result = {
+    ...existing,
     updatedAt: new Date().toISOString(),
     members: allMembers,
-    bonusParMembre,
-    top10BonusDispo,
   };
 
   fs.writeFileSync('./all_members.json', JSON.stringify(result, null, 2));
-  console.log('\n🎉 Terminé ! Sauvegardé dans all_members.json');
-  console.log('\n🏆 Top 10 joueurs pour le prochain bonus :');
-  top10BonusDispo.forEach((j, i) => {
-    console.log(`  ${i + 1}. ${j.joueur} — moy. ${j.moyenneScore} pts (${j.nbPicks} picks)`);
-  });
+  console.log('\n🎉 Terminé !');
 }
 
 main();
