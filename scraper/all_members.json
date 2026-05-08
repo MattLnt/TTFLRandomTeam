@@ -23,10 +23,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": "KELLY OUBRE JR.",
+            "joueur": "JULIUS RANDLE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -91,10 +91,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": null,
+            "joueur": "KELLY OUBRE JR.",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -125,10 +125,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": "ANTHONY EDWARDS",
+            "joueur": "KELLY OUBRE JR.",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(12, 35, 64)",
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -171,5 +171,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-08T18:11:56.860Z"
+  "updatedAt": "2026-05-08T18:51:40.052Z"
 }
