@@ -23,10 +23,10 @@
         "picks": [
           {
             "date": "2026-05-08",
-            "joueur": "KELLY OUBRE JR.",
+            "joueur": "JULIUS RANDLE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -171,5 +171,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-08T19:36:42.014Z"
+  "updatedAt": "2026-05-08T20:29:28.763Z"
 }
