@@ -1,8 +1,22 @@
 {
   "Randomsson": [
     {
+      "name": "TTFLhash",
+      "value": "9c1c68a2e18701114e062bc30dff60b6cf2bf29aed62861ab2ba116cb04e843e",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786866512.861459,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "icuh2beva76u2djhf5mehghkg6",
+      "value": "h1nhg6in56vpio1tu77qob53ei",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -10,20 +24,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "9c1c68a2e18701114e062bc30dff60b6cf2bf29aed62861ab2ba116cb04e843e",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880106.665673,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -31,22 +31,8 @@
   ],
   "Caribbean": [
     {
-      "name": "TTFLhash",
-      "value": "6659ff2c92b31edd0f7f7a348cb51bcb097d6e624780d23d4c8192cda8f3ed11",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880173.642539,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
       "name": "PHPSESSID",
-      "value": "rp6cmp2m896k0tk988qjv6rqvk",
+      "value": "jjmbh7fkahjamql97dtuu2f4h6",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -54,6 +40,20 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
+      "name": "TTFLhash",
+      "value": "6659ff2c92b31edd0f7f7a348cb51bcb097d6e624780d23d4c8192cda8f3ed11",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786866574.417906,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -65,7 +65,7 @@
       "value": "33a06ba3f34a5ae58ac6c5937497c2cd402e062df9fb3497c18944a8f5a52687",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
-      "expires": 1786880261.59367,
+      "expires": 1786866630.587988,
       "size": 72,
       "httpOnly": false,
       "secure": false,
@@ -76,7 +76,7 @@
     },
     {
       "name": "PHPSESSID",
-      "value": "n2sjsngvqkfeaeafq5ise21cua",
+      "value": "ho6hhlkti1vi4dh9r97r28qspj",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -91,8 +91,22 @@
   ],
   "MagicOz": [
     {
+      "name": "TTFLhash",
+      "value": "0fa2a85463d1135a3055d34decb43f8fc1e8702f1acb9d08bfef416b59de7996",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786867581.267258,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "vme1so478k9b0b8l3mvon9pb8b",
+      "value": "fs9ke73obq8e48qe8f4rnn31e7",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -100,20 +114,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "0fa2a85463d1135a3055d34decb43f8fc1e8702f1acb9d08bfef416b59de7996",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880329.226056,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -121,8 +121,22 @@
   ],
   "MrGillou": [
     {
+      "name": "TTFLhash",
+      "value": "37a6590deb841b6bf5e52f0e74655c2ae397f341c6293ea60450683efb081a50",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786867637.174795,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "pd8911tmdqheo3qfjjogmh97cg",
+      "value": "64fbgoo68l7esbr7jba9rstna2",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -130,20 +144,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "37a6590deb841b6bf5e52f0e74655c2ae397f341c6293ea60450683efb081a50",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880397.100598,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -151,8 +151,22 @@
   ],
   "Ayowan": [
     {
+      "name": "TTFLhash",
+      "value": "8bb870235452f5daf51305e725ebb397dccea1d10b7fa6cd585a04aed5c055e4",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786867693.494094,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "3rpfhl1m9f318bb13ld1am0ice",
+      "value": "0oupu2uv14jt3kjkfiu1nvppvq",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -160,20 +174,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "8bb870235452f5daf51305e725ebb397dccea1d10b7fa6cd585a04aed5c055e4",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880459.270584,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -181,8 +181,22 @@
   ],
   "K3NZe": [
     {
+      "name": "TTFLhash",
+      "value": "7d8bbe7134f1df48b0e334d77e6a177e8e507423ffc7c55c39046c536db59e8a",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786867749.650425,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "58vn0h0nqcmkfhji30rfes0gse",
+      "value": "j0udbl5bmi69f0bon968m4cof6",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -190,20 +204,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "7d8bbe7134f1df48b0e334d77e6a177e8e507423ffc7c55c39046c536db59e8a",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880526.741762,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -211,8 +211,22 @@
   ],
   "Beusc": [
     {
+      "name": "TTFLhash",
+      "value": "2688262ad3e69cc2ebebe2d69cfb4af15aefca40793f29e510ab4aeddb2533c6",
+      "domain": "fantasy.trashtalk.co",
+      "path": "/",
+      "expires": 1786867810.820339,
+      "size": 72,
+      "httpOnly": false,
+      "secure": false,
+      "session": false,
+      "priority": "Medium",
+      "sourceScheme": "Secure",
+      "sameParty": false
+    },
+    {
       "name": "PHPSESSID",
-      "value": "041bhcap6erj2dafjgrooamkfh",
+      "value": "45a8e70qed0e1h0cjje8t940ni",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -220,20 +234,6 @@
       "httpOnly": false,
       "secure": false,
       "session": true,
-      "priority": "Medium",
-      "sourceScheme": "Secure",
-      "sameParty": false
-    },
-    {
-      "name": "TTFLhash",
-      "value": "2688262ad3e69cc2ebebe2d69cfb4af15aefca40793f29e510ab4aeddb2533c6",
-      "domain": "fantasy.trashtalk.co",
-      "path": "/",
-      "expires": 1786880609.759717,
-      "size": 72,
-      "httpOnly": false,
-      "secure": false,
-      "session": false,
       "priority": "Medium",
       "sourceScheme": "Secure",
       "sameParty": false
@@ -245,7 +245,7 @@
       "value": "ffb591ec43e95205b3a32d986102a6a2df56c6cfcdb50ef1eaf3522ac348fa32",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
-      "expires": 1786880682.299022,
+      "expires": 1786867877.198089,
       "size": 72,
       "httpOnly": false,
       "secure": false,
@@ -256,7 +256,7 @@
     },
     {
       "name": "PHPSESSID",
-      "value": "k659ch19jks4k32qj5bl8f1u1q",
+      "value": "vcman19v5d8qbbnsjl2k90gq6e",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
@@ -275,7 +275,7 @@
       "value": "7f22dea4e2b7e74462606051a37d842342393be98625e748a7f35d2f0e94d4c5",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
-      "expires": 1786880812.924934,
+      "expires": 1786867927.777674,
       "size": 72,
       "httpOnly": false,
       "secure": false,
@@ -286,7 +286,7 @@
     },
     {
       "name": "PHPSESSID",
-      "value": "2urc1v1o5bnq1klvqq66uitmn9",
+      "value": "rbvdvu0ok355onr57679aj943l",
       "domain": "fantasy.trashtalk.co",
       "path": "/",
       "expires": -1,
