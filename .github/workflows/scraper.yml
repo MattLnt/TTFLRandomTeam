@@ -1,0 +1,45 @@
+name: TTFL Scraper
+
+on:
+  schedule:
+    # Toutes les 30 minutes entre 14h et 23h UTC (16h-1h heure française)
+    - cron: '*/30 14-23 * * *'
+  workflow_dispatch:  # Permet de lancer manuellement
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_TOKEN }}
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        working-directory: ./scraper
+        run: npm install
+      
+      - name: Restore cookies from secret
+        working-directory: ./scraper
+        run: echo '${{ secrets.COOKIES_JSON }}' > cookies.json
+      
+      - name: Run scraper
+        working-directory: ./scraper
+        run: node scraper-final.js
+        env:
+          TWOCAPTCHA_API_KEY: ${{ secrets.TWOCAPTCHA_API_KEY }}
+      
+      - name: Commit and push if changed
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add scraper/all_members.json scraper/cookies.json
+          git diff --staged --quiet || git commit -m "🤖 Auto-update picks $(date)"
+          git push
