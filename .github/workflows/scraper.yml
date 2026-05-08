@@ -2,9 +2,8 @@ name: TTFL Scraper
 
 on:
   schedule:
-    # Toutes les 30 minutes entre 14h et 23h UTC (16h-1h heure française)
     - cron: '*/30 14-23 * * *'
-  workflow_dispatch:  # Permet de lancer manuellement
+  workflow_dispatch:
 
 jobs:
   scrape:
@@ -22,6 +21,9 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Install Xvfb
+        run: sudo apt-get update && sudo apt-get install -y xvfb
+      
       - name: Install dependencies
         working-directory: ./scraper
         run: npm install
@@ -30,9 +32,9 @@ jobs:
         working-directory: ./scraper
         run: echo '${{ secrets.COOKIES_JSON }}' > cookies.json
       
-      - name: Run scraper
+      - name: Run scraper with virtual display
         working-directory: ./scraper
-        run: node scraper-final.js
+        run: xvfb-run --auto-servernum --server-args='-screen 0 1280x800x24' node scraper-final.js
         env:
           TWOCAPTCHA_API_KEY: ${{ secrets.TWOCAPTCHA_API_KEY }}
       
@@ -41,5 +43,5 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add scraper/all_members.json scraper/cookies.json
-          git diff --staged --quiet || git commit -m "🤖 Auto-update picks $(date)"
+          git diff --staged --quiet || git commit -m "Auto-update picks"
           git push
