@@ -7,6 +7,7 @@ const PAGE_URL = 'https://fantasy.trashtalk.co/login/';
 const COOKIES_FILE = './cookies.json';
 const MEMBERS_FILE = './members.json';
 const CURRENT_CHAMPWEEK = '4';
+const DELAY_BETWEEN_MEMBERS = 30000; // 30 secondes entre chaque membre
 
 async function solveTurnstile() {
   console.log('🔄 Envoi du captcha à 2captcha...');
@@ -35,15 +36,12 @@ async function loginMember(browser, member) {
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
-  // Vider les cookies du navigateur
   const client = await page.createCDPSession();
   await client.send('Network.clearBrowserCookies');
 
-  // Aller sur la page de login
   await page.goto(PAGE_URL, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#email', { timeout: 15000 });
 
-  // Vider les champs et les remplir
   await page.$eval('#email', el => el.value = '');
   await page.$eval('#password', el => el.value = '');
   await page.click('#email');
@@ -71,7 +69,6 @@ async function loginMember(browser, member) {
 
   console.log(`✅ ${member.pseudo} connecté !`);
 
-  // Attendre 2 secondes puis naviguer vers le deck
   await new Promise(r => setTimeout(r, 2000));
   await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#champweek', { timeout: 15000 }).catch(() => null);
@@ -122,19 +119,58 @@ async function loginMember(browser, member) {
   return { sessionCookies, deck };
 }
 
-async function scrapeHistorique(browser, sessionCookies) {
+async function scrapeWithCookies(browser, sessionCookies) {
   const page = await browser.newPage();
-  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
+  await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
 
   await page.goto('https://fantasy.trashtalk.co/', { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.setCookie(...sessionCookies);
+
+  // Tester si la session est valide en allant sur le deck
+  await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
+  await page.waitForSelector('#champweek', { timeout: 15000 }).catch(() => null);
+
+  const isLoggedIn = await page.evaluate(() => !!document.querySelector('#champweek'));
+  if (!isLoggedIn) {
+    await page.close();
+    return { sessionValid: false, deck: null, historique: null };
+  }
+
+  // Scraper le deck
+  await page.waitForSelector('[id^="deck202"]', { timeout: 15000 }).catch(() => null);
+  const deck = await page.evaluate(() => {
+    const champweek = document.querySelector('#champweek')?.value;
+    const deckDivs = document.querySelectorAll('[id^="deck202"]');
+    const picks = [];
+    deckDivs.forEach(div => {
+      const date = div.id.replace('deck', '');
+      const labels = div.querySelectorAll('.counter-label');
+      const joueurText = labels[0]?.innerText?.trim();
+      const scoreEl = div.querySelector('[style*="Alfa Slab One"]');
+      const score = scoreEl?.innerText?.trim() || null;
+      const widgetContents = div.querySelectorAll('.widget-content');
+      const widgetContent = widgetContents[1] || widgetContents[0];
+      const bgColor = widgetContent?.style?.backgroundColor;
+      const isPicked = joueurText &&
+        !joueurText.toLowerCase().includes('choisir') &&
+        !joueurText.toLowerCase().includes('joueur') &&
+        joueurText !== '';
+      picks.push({
+        date,
+        joueur: isPicked ? joueurText : null,
+        score: score ? parseInt(score) : null,
+        picked: isPicked,
+        teamColor: isPicked ? bgColor : null,
+      });
+    });
+    return { champweek, picks };
+  });
+
+  // Scraper l'historique
   await page.goto('https://fantasy.trashtalk.co/?tpl=historique', { waitUntil: 'domcontentloaded', timeout: 60000 });
   await page.waitForSelector('#MuTabme', { timeout: 20000 }).catch(() => null);
 
-  const loggedIn = await page.evaluate(() => !!document.querySelector('#MuTabme'));
-  if (!loggedIn) { await page.close(); return null; }
-
-  const picks = await page.evaluate(() => {
+  const historique = await page.evaluate(() => {
     const rows = document.querySelectorAll('#MuTabme tbody tr');
     const results = [];
     rows.forEach(row => {
@@ -160,7 +196,7 @@ async function scrapeHistorique(browser, sessionCookies) {
   });
 
   await page.close();
-  return picks;
+  return { sessionValid: true, deck, historique };
 }
 
 function loadCookies() {
@@ -174,14 +210,6 @@ function loadCookies() {
 
 function saveCookies(cache) {
   fs.writeFileSync(COOKIES_FILE, JSON.stringify(cache, null, 2));
-}
-
-function isCookieExpired(sessionCookies) {
-  const ttflHash = sessionCookies.find(c => c.name === 'TTFLhash');
-  if (!ttflHash || !ttflHash.expires) return true;
-  const daysLeft = (ttflHash.expires * 1000 - Date.now()) / (1000 * 60 * 60 * 24);
-  console.log(`⏱️  Cookie expire dans ${Math.round(daysLeft)} jours`);
-  return daysLeft < 7;
 }
 
 function analyseBonus(allMembers) {
@@ -225,73 +253,43 @@ async function main() {
     args: ['--no-sandbox', '--window-size=1280,800'],
   });
 
-  for (const member of members) {
+  for (let i = 0; i < members.length; i++) {
+    const member = members[i];
     console.log(`\n━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`);
     console.log(`👤 Traitement de ${member.pseudo}`);
 
     try {
       let sessionCookies = cookieCache[member.pseudo];
       let deck = null;
+      let historique = null;
 
-      if (!sessionCookies || isCookieExpired(sessionCookies)) {
-        const result = await loginMember(browser, member);
-        sessionCookies = result.sessionCookies;
-        deck = result.deck;
-        cookieCache[member.pseudo] = sessionCookies;
-        saveCookies(cookieCache);
-      } else {
-        console.log(`🍪 Cookies valides pour ${member.pseudo}`);
-        const page = await browser.newPage();
-        await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36');
-        await page.goto('https://fantasy.trashtalk.co/', { waitUntil: 'domcontentloaded', timeout: 60000 });
-        await page.setCookie(...sessionCookies);
-        await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { waitUntil: 'domcontentloaded', timeout: 60000 });
-        await page.waitForSelector('[id^="deck202"]', { timeout: 15000 }).catch(() => null);
-
-        const isLoggedIn = await page.evaluate(() => !!document.querySelector('#champweek'));
-        if (isLoggedIn) {
-          deck = await page.evaluate(() => {
-            const champweek = document.querySelector('#champweek')?.value;
-            const deckDivs = document.querySelectorAll('[id^="deck202"]');
-            const picks = [];
-            deckDivs.forEach(div => {
-              const date = div.id.replace('deck', '');
-              const labels = div.querySelectorAll('.counter-label');
-              const joueurText = labels[0]?.innerText?.trim();
-              const scoreEl = div.querySelector('[style*="Alfa Slab One"]');
-              const score = scoreEl?.innerText?.trim() || null;
-              const widgetContents = div.querySelectorAll('.widget-content');
-              const widgetContent = widgetContents[1] || widgetContents[0];
-              const bgColor = widgetContent?.style?.backgroundColor;
-              const isPicked = joueurText &&
-                !joueurText.toLowerCase().includes('choisir') &&
-                !joueurText.toLowerCase().includes('joueur') &&
-                joueurText !== '';
-              picks.push({
-                date,
-                joueur: isPicked ? joueurText : null,
-                score: score ? parseInt(score) : null,
-                picked: isPicked,
-                teamColor: isPicked ? bgColor : null,
-              });
-            });
-            return { champweek, picks };
-          });
-          console.log(`📦 Deck scrapé: ${deck?.picks?.length || 0} jours, ${deck?.picks?.filter(p => p.picked).length || 0} picks`);
+      // Essayer d'abord avec les cookies existants
+      if (sessionCookies && sessionCookies.length > 0) {
+        console.log(`🍪 Test des cookies existants...`);
+        const result = await scrapeWithCookies(browser, sessionCookies);
+        
+        if (result.sessionValid) {
+          console.log(`✅ Cookies valides — pas besoin de relogin`);
+          deck = result.deck;
+          historique = result.historique;
+        } else {
+          console.log(`⚠️  Cookies expirés — login requis`);
+          sessionCookies = null;
         }
-        await page.close();
       }
 
-      let historique = await scrapeHistorique(browser, sessionCookies);
-
-      if (!historique) {
-        console.log(`❌ Session expirée pour ${member.pseudo}, reconnexion...`);
-        const result = await loginMember(browser, member);
-        sessionCookies = result.sessionCookies;
-        deck = result.deck;
+      // Si pas de cookies ou cookies invalides, login complet
+      if (!sessionCookies || !historique) {
+        const loginResult = await loginMember(browser, member);
+        sessionCookies = loginResult.sessionCookies;
+        deck = loginResult.deck;
         cookieCache[member.pseudo] = sessionCookies;
         saveCookies(cookieCache);
-        historique = await scrapeHistorique(browser, sessionCookies);
+
+        // Récupérer historique après login
+        const result = await scrapeWithCookies(browser, sessionCookies);
+        historique = result.historique;
+        if (!deck) deck = result.deck;
       }
 
       allMembers[member.pseudo] = {
@@ -306,6 +304,12 @@ async function main() {
     } catch (err) {
       console.log(`❌ Erreur pour ${member.pseudo} : ${err.message}`);
       allMembers[member.pseudo] = { historique: [], deck: {}, bonusUtilises: [], joueursUtilises: [] };
+    }
+
+    // Attendre 30 secondes avant le prochain membre (sauf le dernier)
+    if (i < members.length - 1) {
+      console.log(`⏸️  Pause de ${DELAY_BETWEEN_MEMBERS / 1000}s avant le prochain membre...`);
+      await new Promise(r => setTimeout(r, DELAY_BETWEEN_MEMBERS));
     }
   }
 
