@@ -11,6 +11,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "LEBRON JAMES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
           }
         ]
       },
@@ -27,6 +35,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
             "bonus": false
           }
         ]
@@ -45,6 +61,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -61,6 +85,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
             "bonus": false
           }
         ]
@@ -79,6 +111,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
           }
         ]
       },
@@ -95,6 +135,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
             "bonus": false
           }
         ]
@@ -113,6 +161,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "RUI HACHIMURA",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
           }
         ]
       },
@@ -129,6 +185,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
             "bonus": false
           }
         ]
@@ -147,6 +211,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "RUI HACHIMURA",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
           }
         ]
       },
@@ -164,6 +236,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-09",
+            "joueur": "AUSTIN REAVES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
           }
         ]
       },
@@ -171,5 +251,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-08T22:41:15.800Z"
+  "updatedAt": "2026-05-09T16:50:03.123Z"
 }
