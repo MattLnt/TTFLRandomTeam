@@ -19,6 +19,14 @@
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "ANDRE DRUMMOND",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -43,6 +51,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "KELLY OUBRE JR.",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -69,6 +85,14 @@
             "picked": false,
             "teamColor": null,
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "ANTHONY EDWARDS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           }
         ]
       },
@@ -93,6 +117,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -119,6 +151,14 @@
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -143,6 +183,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -169,6 +217,14 @@
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "ANTHONY EDWARDS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           }
         ]
       },
@@ -193,6 +249,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -219,6 +283,14 @@
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "RUDY GOBERT",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           }
         ]
       },
@@ -244,6 +316,14 @@
             "picked": true,
             "teamColor": "rgb(85, 37, 131)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-10",
+            "joueur": "ANTHONY EDWARDS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
           }
         ]
       },
@@ -251,5 +331,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-09T20:19:49.812Z"
+  "updatedAt": "2026-05-10T12:50:59.390Z"
 }
