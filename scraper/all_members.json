@@ -55,10 +55,10 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": "KELLY OUBRE JR.",
+            "joueur": "ANTHONY EDWARDS",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -187,7 +187,7 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": "RUDY GOBERT",
+            "joueur": "ANTHONY EDWARDS",
             "score": null,
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
@@ -331,5 +331,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-10T18:42:43.066Z"
+  "updatedAt": "2026-05-10T19:22:14.448Z"
 }
