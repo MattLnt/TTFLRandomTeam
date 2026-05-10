@@ -22,10 +22,10 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": "ANDRE DRUMMOND",
+            "joueur": "ANTHONY EDWARDS",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -154,10 +154,10 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": null,
+            "joueur": "ANTHONY EDWARDS",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -331,5 +331,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-10T19:22:14.448Z"
+  "updatedAt": "2026-05-10T20:21:33.404Z"
 }
