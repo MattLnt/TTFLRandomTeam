@@ -121,10 +121,10 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": null,
+            "joueur": "KELLY OUBRE JR.",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -187,10 +187,10 @@
           },
           {
             "date": "2026-05-10",
-            "joueur": null,
+            "joueur": "RUDY GOBERT",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -331,5 +331,5 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-10T12:50:59.390Z"
+  "updatedAt": "2026-05-10T17:17:34.424Z"
 }
