@@ -27,6 +27,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "JAMES HARDEN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -59,6 +67,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -93,6 +109,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "JAMES HARDEN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -125,6 +149,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "JAMES HARDEN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -159,6 +191,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -191,6 +231,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -225,6 +273,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "DUNCAN ROBINSON",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(29, 66, 186)",
+            "bonus": false
           }
         ]
       },
@@ -257,6 +313,14 @@
             "score": null,
             "picked": false,
             "teamColor": null,
+            "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "DONOVAN MITCHELL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -291,6 +355,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -324,6 +396,14 @@
             "picked": true,
             "teamColor": "rgb(12, 35, 64)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-13",
+            "joueur": "TOBIAS HARRIS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(29, 66, 186)",
+            "bonus": false
           }
         ]
       },
@@ -331,5 +411,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-12T20:21:15.152Z"
+  "updatedAt": "2026-05-13T14:11:13.866Z",
+  "currentChampweek": 5
 }
