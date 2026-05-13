@@ -6,7 +6,6 @@ const SITEKEY = '0x4AAAAAAAKfN4HGN0ywrGGa';
 const PAGE_URL = 'https://fantasy.trashtalk.co/login/';
 const COOKIES_FILE = './cookies.json';
 const MEMBERS_FILE = './members.json';
-const CURRENT_CHAMPWEEK = '4';
 const DELAY_BETWEEN_MEMBERS = 30000;
 const MAX_RETRIES = 2;
 
@@ -48,18 +47,15 @@ async function loginAndGetTodayPick(browser, member) {
 
   console.log(`🔐 Connexion pour ${member.pseudo}...`);
   
-  // Charger la page de login avec networkidle pour s'assurer que tout est chargé
   await page.goto(PAGE_URL, { waitUntil: 'networkidle2', timeout: 90000 });
   await page.waitForSelector('#email', { timeout: 30000 });
   await page.waitForSelector('#password', { timeout: 30000 });
   await page.waitForSelector('button[type="submit"]', { timeout: 30000 });
   
-  // Attendre que le widget Turnstile soit chargé
   await page.waitForSelector('[name="cf-turnstile-response"]', { timeout: 30000 }).catch(() => {
     console.log('⚠️  Turnstile pas trouvé, continue quand même...');
   });
 
-  // Petit délai humain
   await new Promise(r => setTimeout(r, 1500));
 
   await page.click('#email');
@@ -70,7 +66,6 @@ async function loginAndGetTodayPick(browser, member) {
   await new Promise(r => setTimeout(r, 300));
   await page.type('#password', member.password, { delay: 100 });
 
-  // Résoudre le captcha
   const token = await solveTurnstile();
   
   await page.evaluate((token) => {
@@ -84,20 +79,16 @@ async function loginAndGetTodayPick(browser, member) {
     input.value = token;
   }, token);
 
-  // Petit délai après captcha
   await new Promise(r => setTimeout(r, 1500));
 
-  // Submit
   await page.click('button[type="submit"]');
 
-  // Attendre la redirection avec un timeout plus long (120s)
   try {
     await page.waitForFunction(
       () => !window.location.href.includes('/login'),
       { timeout: 120000, polling: 1000 }
     );
   } catch (err) {
-    // Si timeout, vérifier si on est quand même connecté
     const currentUrl = page.url();
     console.log(`⚠️  Timeout, URL actuelle: ${currentUrl}`);
     if (currentUrl.includes('/login')) {
@@ -108,16 +99,34 @@ async function loginAndGetTodayPick(browser, member) {
   console.log(`✅ ${member.pseudo} connecté !`);
   await new Promise(r => setTimeout(r, 2000));
 
-  // Aller sur le champweek
-  await page.goto(`https://fantasy.trashtalk.co/?champweek=${CURRENT_CHAMPWEEK}`, { 
+  // Aller sur la page principale et détecter le champweek courant
+  await page.goto(`https://fantasy.trashtalk.co/`, { 
     waitUntil: 'networkidle2', 
     timeout: 90000 
   });
-  
-  // Attendre que le deck du jour soit chargé
-  await page.waitForSelector(`#deck${today}`, { timeout: 30000 }).catch(() => {
-    console.log(`⚠️  #deck${today} pas trouvé`);
+  await page.waitForSelector('#champweek', { timeout: 30000 });
+
+  const currentChampweek = await page.evaluate(() => {
+    return document.querySelector('#champweek')?.value;
   });
+  console.log(`📅 Champweek détecté: ${currentChampweek}`);
+
+  // Vérifier si le deck d'aujourd'hui est déjà présent
+  let deckPresent = await page.evaluate((todayDate) => {
+    return !!document.querySelector(`#deck${todayDate}`);
+  }, today);
+
+  // Si pas présent, naviguer explicitement sur le champweek courant
+  if (!deckPresent && currentChampweek) {
+    console.log(`🔄 Navigation vers champweek=${currentChampweek}...`);
+    await page.goto(`https://fantasy.trashtalk.co/?champweek=${currentChampweek}`, { 
+      waitUntil: 'networkidle2', 
+      timeout: 90000 
+    });
+    await page.waitForSelector(`#deck${today}`, { timeout: 30000 }).catch(() => {
+      console.log(`⚠️  #deck${today} pas trouvé`);
+    });
+  }
 
   const todayPick = await page.evaluate((todayDate) => {
     const div = document.querySelector(`#deck${todayDate}`);
