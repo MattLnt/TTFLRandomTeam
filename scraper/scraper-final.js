@@ -9,9 +9,36 @@ const MEMBERS_FILE = './members.json';
 const DELAY_BETWEEN_MEMBERS = 30000;
 const MAX_RETRIES = 2;
 
+// ⚠️ À METTRE À JOUR CHAQUE NOUVELLE SAISON
+// Date du premier jour de la saison (samedi ou autre)
+// Les champweeks changent chaque lundi
+const SEASON_START_DATE = '2026-04-18'; // Playoffs 2026 — samedi
+const SEASON_START_WEEKDAY = 6; // 0=dimanche, 1=lundi, ..., 6=samedi
+
 function getTodayDate() {
   const now = new Date();
   return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+}
+
+function getCurrentChampweek() {
+  const seasonStart = new Date(SEASON_START_DATE + 'T00:00:00');
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  
+  const daysSinceStart = Math.floor((today - seasonStart) / (1000 * 60 * 60 * 24));
+  
+  // Nombre de jours jusqu'au premier lundi suivant le début de saison
+  // Si la saison commence un lundi (1), c'est 0. Si elle commence un samedi (6), c'est 2.
+  const daysUntilFirstMonday = (8 - SEASON_START_WEEKDAY) % 7 || 0;
+  
+  if (daysSinceStart < daysUntilFirstMonday) {
+    return 1; // Champweek 1 (partielle, jusqu'au premier lundi)
+  }
+  
+  const daysSinceFirstMonday = daysSinceStart - daysUntilFirstMonday;
+  const weekNumber = Math.floor(daysSinceFirstMonday / 7) + 2;
+  
+  return weekNumber;
 }
 
 async function solveTurnstile() {
@@ -36,7 +63,7 @@ async function solveTurnstile() {
   throw new Error('Timeout captcha');
 }
 
-async function loginAndGetTodayPick(browser, member) {
+async function loginAndGetTodayPick(browser, member, currentChampweek) {
   const today = getTodayDate();
   const page = await browser.newPage();
   await page.setUserAgent('Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36');
@@ -99,34 +126,15 @@ async function loginAndGetTodayPick(browser, member) {
   console.log(`✅ ${member.pseudo} connecté !`);
   await new Promise(r => setTimeout(r, 2000));
 
-  // Aller sur la page principale et détecter le champweek courant
-  await page.goto(`https://fantasy.trashtalk.co/`, { 
+  // Naviguer directement sur le champweek calculé
+  await page.goto(`https://fantasy.trashtalk.co/?champweek=${currentChampweek}`, { 
     waitUntil: 'networkidle2', 
     timeout: 90000 
   });
-  await page.waitForSelector('#champweek', { timeout: 30000 });
-
-  const currentChampweek = await page.evaluate(() => {
-    return document.querySelector('#champweek')?.value;
+  
+  await page.waitForSelector(`#deck${today}`, { timeout: 30000 }).catch(() => {
+    console.log(`⚠️  #deck${today} pas trouvé sur champweek=${currentChampweek}`);
   });
-  console.log(`📅 Champweek détecté: ${currentChampweek}`);
-
-  // Vérifier si le deck d'aujourd'hui est déjà présent
-  let deckPresent = await page.evaluate((todayDate) => {
-    return !!document.querySelector(`#deck${todayDate}`);
-  }, today);
-
-  // Si pas présent, naviguer explicitement sur le champweek courant
-  if (!deckPresent && currentChampweek) {
-    console.log(`🔄 Navigation vers champweek=${currentChampweek}...`);
-    await page.goto(`https://fantasy.trashtalk.co/?champweek=${currentChampweek}`, { 
-      waitUntil: 'networkidle2', 
-      timeout: 90000 
-    });
-    await page.waitForSelector(`#deck${today}`, { timeout: 30000 }).catch(() => {
-      console.log(`⚠️  #deck${today} pas trouvé`);
-    });
-  }
 
   const todayPick = await page.evaluate((todayDate) => {
     const div = document.querySelector(`#deck${todayDate}`);
@@ -162,14 +170,14 @@ async function loginAndGetTodayPick(browser, member) {
   return todayPick;
 }
 
-async function processWithRetry(browser, member, maxRetries) {
+async function processWithRetry(browser, member, currentChampweek, maxRetries) {
   for (let attempt = 1; attempt <= maxRetries; attempt++) {
     try {
       if (attempt > 1) {
         console.log(`🔁 Tentative ${attempt}/${maxRetries}...`);
         await new Promise(r => setTimeout(r, 5000));
       }
-      return await loginAndGetTodayPick(browser, member);
+      return await loginAndGetTodayPick(browser, member, currentChampweek);
     } catch (err) {
       console.log(`❌ Tentative ${attempt} échouée: ${err.message}`);
       if (attempt === maxRetries) throw err;
@@ -180,6 +188,10 @@ async function processWithRetry(browser, member, maxRetries) {
 async function main() {
   const members = JSON.parse(fs.readFileSync(MEMBERS_FILE, 'utf8'));
   const today = getTodayDate();
+  const currentChampweek = getCurrentChampweek();
+  
+  console.log(`📅 Date: ${today}`);
+  console.log(`🏆 Champweek calculé: ${currentChampweek}`);
 
   let existing = { members: {} };
   if (fs.existsSync('./all_members.json')) {
@@ -208,7 +220,7 @@ async function main() {
     console.log(`👤 ${member.pseudo} (${i + 1}/${members.length})`);
 
     try {
-      const todayPick = await processWithRetry(browser, member, MAX_RETRIES);
+      const todayPick = await processWithRetry(browser, member, currentChampweek, MAX_RETRIES);
 
       const existingMember = allMembers[member.pseudo] || { 
         historique: [], 
@@ -250,6 +262,7 @@ async function main() {
     ...existing,
     updatedAt: new Date().toISOString(),
     members: allMembers,
+    currentChampweek,
   };
 
   fs.writeFileSync('./all_members.json', JSON.stringify(result, null, 2));
