@@ -358,10 +358,10 @@
           },
           {
             "date": "2026-05-13",
-            "joueur": null,
+            "joueur": "DONOVAN MITCHELL",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -411,6 +411,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-13T19:11:31.181Z",
+  "updatedAt": "2026-05-13T20:11:36.484Z",
   "currentChampweek": 5
 }
