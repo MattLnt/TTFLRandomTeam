@@ -71,10 +71,10 @@
           },
           {
             "date": "2026-05-13",
-            "joueur": null,
+            "joueur": "DARIUS BROWN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -411,6 +411,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-13T14:11:13.866Z",
+  "updatedAt": "2026-05-13T15:41:12.911Z",
   "currentChampweek": 5
 }
