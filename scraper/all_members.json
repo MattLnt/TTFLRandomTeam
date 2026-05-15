@@ -38,7 +38,7 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "DE'AARON FOX",
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
@@ -87,10 +87,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": null,
+            "joueur": "MIKE CONLEY",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(12, 35, 64)",
             "bonus": false
           }
         ]
@@ -283,10 +283,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": null,
+            "joueur": "JALEN DUREN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(29, 66, 186)",
             "bonus": false
           }
         ]
@@ -381,10 +381,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": null,
+            "joueur": "JALEN DUREN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(29, 66, 186)",
             "bonus": false
           }
         ]
@@ -491,6 +491,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-15T15:40:53.298Z",
+  "updatedAt": "2026-05-15T19:56:03.269Z",
   "currentChampweek": 5
 }
