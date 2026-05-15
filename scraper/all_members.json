@@ -87,10 +87,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "MIKE CONLEY",
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(12, 35, 64)",
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -283,10 +283,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "JALEN DUREN",
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(29, 66, 186)",
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -332,10 +332,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "JALEN DUREN",
+            "joueur": "JAMES HARDEN",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(29, 66, 186)",
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -381,10 +381,10 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "JALEN DUREN",
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(29, 66, 186)",
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -479,7 +479,7 @@
           },
           {
             "date": "2026-05-15",
-            "joueur": "DYLAN HARPER",
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
@@ -491,6 +491,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-15T21:19:13.282Z",
+  "updatedAt": "2026-05-15T22:41:08.860Z",
   "currentChampweek": 5
 }
