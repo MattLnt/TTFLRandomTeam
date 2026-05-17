@@ -103,10 +103,10 @@
           },
           {
             "date": "2026-05-17",
-            "joueur": null,
+            "joueur": "JAMES HARDEN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -274,10 +274,10 @@
           },
           {
             "date": "2026-05-17",
-            "joueur": null,
+            "joueur": "EVAN MOBLEY",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -331,10 +331,10 @@
           },
           {
             "date": "2026-05-17",
-            "joueur": null,
+            "joueur": "EVAN MOBLEY",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -445,10 +445,10 @@
           },
           {
             "date": "2026-05-17",
-            "joueur": null,
+            "joueur": "JAMES HARDEN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -559,10 +559,10 @@
           },
           {
             "date": "2026-05-17",
-            "joueur": null,
+            "joueur": "JAMES HARDEN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -571,6 +571,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-17T12:10:30.726Z",
+  "updatedAt": "2026-05-17T18:42:48.492Z",
   "currentChampweek": 5
 }
