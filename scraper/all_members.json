@@ -119,10 +119,10 @@
           },
           {
             "date": "2026-05-18",
-            "joueur": null,
+            "joueur": "CHET HOLMGREN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
             "bonus": false
           }
         ]
@@ -509,10 +509,10 @@
           },
           {
             "date": "2026-05-18",
-            "joueur": null,
+            "joueur": "DE'AARON FOX",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -651,6 +651,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-18T20:40:22.088Z",
+  "updatedAt": "2026-05-18T22:42:41.895Z",
   "currentChampweek": 6
 }
