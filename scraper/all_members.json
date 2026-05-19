@@ -500,10 +500,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "DENNIS SCHRÖDER",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -731,6 +731,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-19T17:10:34.281Z",
+  "updatedAt": "2026-05-19T18:11:12.820Z",
   "currentChampweek": 6
 }
