@@ -135,10 +135,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "EVAN MOBLEY",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -208,10 +208,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": "MIKAL BRIDGES",
+            "joueur": "MAX STRUS",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -427,10 +427,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": "JARRETT ALLEN",
+            "joueur": "JOSH HART",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(134, 0, 56)",
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -500,10 +500,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": "DENNIS SCHRÖDER",
+            "joueur": "KARL-ANTHONY TOWNS",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(134, 0, 56)",
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -731,6 +731,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-19T20:11:27.794Z",
+  "updatedAt": "2026-05-19T21:40:49.901Z",
   "currentChampweek": 6
 }
