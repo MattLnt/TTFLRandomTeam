@@ -208,10 +208,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "MIKAL BRIDGES",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -281,10 +281,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "EVAN MOBLEY",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -427,10 +427,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "JARRETT ALLEN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -573,10 +573,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "MIKAL BRIDGES",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -646,10 +646,10 @@
           },
           {
             "date": "2026-05-19",
-            "joueur": null,
+            "joueur": "MIKAL BRIDGES",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -731,6 +731,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-19T19:40:36.589Z",
+  "updatedAt": "2026-05-19T20:11:27.794Z",
   "currentChampweek": 6
 }
