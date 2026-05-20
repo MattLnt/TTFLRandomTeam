@@ -67,6 +67,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": "JALEN WILLIAMS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -139,6 +147,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -213,6 +229,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": "ALEX CARUSO",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -285,6 +309,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -359,6 +391,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": "CHET HOLMGREN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -431,6 +471,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -505,6 +553,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": "DE'AARON FOX",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -577,6 +633,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -651,6 +715,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -724,6 +796,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-20",
+            "joueur": "CHET HOLMGREN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -731,6 +811,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-19T21:40:49.901Z",
+  "updatedAt": "2026-05-20T10:10:48.134Z",
   "currentChampweek": 6
 }
