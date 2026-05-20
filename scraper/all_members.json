@@ -313,10 +313,10 @@
           },
           {
             "date": "2026-05-20",
-            "joueur": null,
+            "joueur": "JALEN WILLIAMS",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
             "bonus": false
           }
         ]
@@ -811,6 +811,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-20T10:10:48.134Z",
+  "updatedAt": "2026-05-20T15:40:59.021Z",
   "currentChampweek": 6
 }
