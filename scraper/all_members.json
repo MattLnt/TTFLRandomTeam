@@ -75,6 +75,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": "EVAN MOBLEY",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -155,6 +163,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -237,6 +253,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": "OG ANUNOBY",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -317,6 +341,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -399,6 +431,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": "JOSH HART",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -479,6 +519,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -561,6 +609,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": "DENNIS SCHRÖDER",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -641,6 +697,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -723,6 +787,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -804,6 +876,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-21",
+            "joueur": "MIKAL BRIDGES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -811,6 +891,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-20T22:22:25.452Z",
+  "updatedAt": "2026-05-21T10:15:57.080Z",
   "currentChampweek": 6
 }
