@@ -256,7 +256,7 @@
           },
           {
             "date": "2026-05-21",
-            "joueur": "OG ANUNOBY",
+            "joueur": "JOSH HART",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
@@ -891,6 +891,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-21T16:04:13.193Z",
+  "updatedAt": "2026-05-21T18:14:01.596Z",
   "currentChampweek": 6
 }
