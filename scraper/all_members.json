@@ -280,7 +280,7 @@
           },
           {
             "date": "2026-05-22",
-            "joueur": "AJAY MITCHELL",
+            "joueur": "CHET HOLMGREN",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
@@ -971,6 +971,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-22T17:17:13.208Z",
+  "updatedAt": "2026-05-22T18:46:42.198Z",
   "currentChampweek": 6
 }
