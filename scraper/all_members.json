@@ -377,10 +377,10 @@
           },
           {
             "date": "2026-05-22",
-            "joueur": null,
+            "joueur": "VICTOR WEMBANYAMA",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -971,6 +971,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-22T16:17:26.479Z",
+  "updatedAt": "2026-05-22T17:17:13.208Z",
   "currentChampweek": 6
 }
