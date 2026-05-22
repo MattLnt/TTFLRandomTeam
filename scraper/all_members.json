@@ -83,6 +83,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": "ALEX CARUSO",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -171,6 +179,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -261,6 +277,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": "AJAY MITCHELL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -349,6 +373,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -439,6 +471,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": "DEVIN VASSELL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -527,6 +567,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -617,6 +665,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -705,6 +761,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -795,6 +859,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -884,6 +956,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-22",
+            "joueur": "DEVIN VASSELL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -891,6 +971,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-21T22:03:31.337Z",
+  "updatedAt": "2026-05-22T14:16:17.507Z",
   "currentChampweek": 6
 }
