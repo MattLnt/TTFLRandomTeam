@@ -94,10 +94,10 @@
           },
           {
             "date": "2026-05-23",
-            "joueur": "MIKAL BRIDGES",
+            "joueur": "DEAN WADE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 107, 182)",
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -619,10 +619,10 @@
           },
           {
             "date": "2026-05-23",
-            "joueur": null,
+            "joueur": "JARRETT ALLEN",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -1051,6 +1051,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-23T15:46:53.088Z",
+  "updatedAt": "2026-05-23T17:41:36.478Z",
   "currentChampweek": 6
 }
