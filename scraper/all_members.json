@@ -91,6 +91,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "MIKAL BRIDGES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -187,6 +195,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -285,6 +301,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "JALEN BRUNSON",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
           }
         ]
       },
@@ -381,6 +405,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "MIKAL BRIDGES",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -479,6 +511,14 @@
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "MAX STRUS",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -575,6 +615,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -673,6 +721,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "SAM MERRILL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -769,6 +825,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -867,6 +931,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -964,6 +1036,14 @@
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-23",
+            "joueur": "JARRETT ALLEN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
           }
         ]
       },
@@ -971,6 +1051,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-22T21:42:55.918Z",
+  "updatedAt": "2026-05-23T12:16:08.048Z",
   "currentChampweek": 6
 }
