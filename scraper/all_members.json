@@ -199,10 +199,10 @@
           },
           {
             "date": "2026-05-23",
-            "joueur": null,
+            "joueur": "MAX STRUS",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -934,10 +934,10 @@
           },
           {
             "date": "2026-05-23",
-            "joueur": null,
+            "joueur": "DEAN WADE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -1051,6 +1051,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-23T18:46:23.886Z",
+  "updatedAt": "2026-05-23T19:12:25.161Z",
   "currentChampweek": 6
 }
