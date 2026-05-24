@@ -215,10 +215,10 @@
           },
           {
             "date": "2026-05-24",
-            "joueur": null,
+            "joueur": "DE'AARON FOX",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -328,10 +328,10 @@
           },
           {
             "date": "2026-05-24",
-            "joueur": "JALEN WILLIAMS",
+            "joueur": "JULIAN CHAMPAGNIE",
             "score": null,
             "picked": true,
-            "teamColor": "rgb(0, 122, 193)",
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -667,10 +667,10 @@
           },
           {
             "date": "2026-05-24",
-            "joueur": null,
+            "joueur": "DE'AARON FOX",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -893,10 +893,10 @@
           },
           {
             "date": "2026-05-24",
-            "joueur": null,
+            "joueur": "STEPHON CASTLE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1006,10 +1006,10 @@
           },
           {
             "date": "2026-05-24",
-            "joueur": null,
+            "joueur": "DEVIN VASSELL",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1131,6 +1131,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-24T15:43:01.562Z",
+  "updatedAt": "2026-05-24T18:43:18.903Z",
   "currentChampweek": 6
 }
