@@ -352,10 +352,10 @@
           },
           {
             "date": "2026-05-25",
-            "joueur": null,
+            "joueur": "DEAN WADE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -473,10 +473,10 @@
           },
           {
             "date": "2026-05-25",
-            "joueur": null,
+            "joueur": "DEAN WADE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -836,10 +836,10 @@
           },
           {
             "date": "2026-05-25",
-            "joueur": null,
+            "joueur": "DEAN WADE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -957,10 +957,10 @@
           },
           {
             "date": "2026-05-25",
-            "joueur": null,
+            "joueur": "DEAN WADE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(134, 0, 56)",
             "bonus": false
           }
         ]
@@ -1211,6 +1211,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-25T18:41:26.092Z",
+  "updatedAt": "2026-05-25T21:07:26.254Z",
   "currentChampweek": 7
 }
