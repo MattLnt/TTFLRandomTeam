@@ -1078,10 +1078,10 @@
           },
           {
             "date": "2026-05-25",
-            "joueur": null,
+            "joueur": "JOSH HART",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 107, 182)",
             "bonus": false
           }
         ]
@@ -1211,6 +1211,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-25T10:11:41.195Z",
+  "updatedAt": "2026-05-25T14:17:08.020Z",
   "currentChampweek": 7
 }
