@@ -1150,10 +1150,10 @@
           },
           {
             "date": "2026-05-26",
-            "joueur": null,
+            "joueur": "CASON WALLACE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
             "bonus": false
           }
         ]
@@ -1291,6 +1291,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-26T18:13:31.664Z",
+  "updatedAt": "2026-05-26T19:43:38.127Z",
   "currentChampweek": 7
 }
