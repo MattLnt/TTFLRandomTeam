@@ -115,6 +115,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": "CHET HOLMGREN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -235,6 +243,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -357,6 +373,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -477,6 +501,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -599,6 +631,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -719,6 +759,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": "ALEX CARUSO",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
             "bonus": false
           }
         ]
@@ -841,6 +889,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": "ISAIAH HARTENSTEIN",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -961,6 +1017,14 @@
             "score": null,
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
             "bonus": false
           }
         ]
@@ -1083,6 +1147,14 @@
             "picked": true,
             "teamColor": "rgb(0, 107, 182)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -1204,6 +1276,14 @@
             "picked": true,
             "teamColor": "rgb(134, 0, 56)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-26",
+            "joueur": "ALEX CARUSO",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
+            "bonus": false
           }
         ]
       },
@@ -1211,6 +1291,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-25T22:46:10.820Z",
+  "updatedAt": "2026-05-26T10:17:14.785Z",
   "currentChampweek": 7
 }
