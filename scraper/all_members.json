@@ -892,7 +892,7 @@
           },
           {
             "date": "2026-05-26",
-            "joueur": "ISAIAH HARTENSTEIN",
+            "joueur": "LUGUENTZ DORT",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
@@ -1291,6 +1291,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-26T19:43:38.127Z",
+  "updatedAt": "2026-05-26T20:24:37.761Z",
   "currentChampweek": 7
 }
