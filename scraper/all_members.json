@@ -505,10 +505,10 @@
           },
           {
             "date": "2026-05-26",
-            "joueur": null,
+            "joueur": "ALEX CARUSO",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 122, 193)",
             "bonus": false
           }
         ]
@@ -634,10 +634,10 @@
           },
           {
             "date": "2026-05-26",
-            "joueur": null,
+            "joueur": "DYLAN HARPER",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1291,6 +1291,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-26T10:17:14.785Z",
+  "updatedAt": "2026-05-26T16:15:36.559Z",
   "currentChampweek": 7
 }
