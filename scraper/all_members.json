@@ -811,10 +811,10 @@
           },
           {
             "date": "2026-05-28",
-            "joueur": null,
+            "joueur": "DYLAN HARPER",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1371,6 +1371,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-28T19:13:07.526Z",
+  "updatedAt": "2026-05-28T19:42:07.140Z",
   "currentChampweek": 7
 }
