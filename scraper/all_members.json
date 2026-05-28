@@ -123,6 +123,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "JULIAN CHAMPAGNIE",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -247,6 +255,14 @@
           },
           {
             "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
+          },
+          {
+            "date": "2026-05-28",
             "joueur": null,
             "score": null,
             "picked": false,
@@ -381,6 +397,14 @@
             "picked": false,
             "teamColor": null,
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "STEPHON CASTLE",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -510,6 +534,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "DE'AARON FOX",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -635,6 +667,14 @@
           {
             "date": "2026-05-26",
             "joueur": "DYLAN HARPER",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "STEPHON CASTLE",
             "score": null,
             "picked": true,
             "teamColor": "rgb(0, 0, 0)",
@@ -768,6 +808,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -897,6 +945,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "DEVIN VASSELL",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -1021,6 +1077,14 @@
           },
           {
             "date": "2026-05-26",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
+          },
+          {
+            "date": "2026-05-28",
             "joueur": null,
             "score": null,
             "picked": false,
@@ -1155,6 +1219,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": null,
+            "score": null,
+            "picked": false,
+            "teamColor": null,
+            "bonus": false
           }
         ]
       },
@@ -1284,6 +1356,14 @@
             "picked": true,
             "teamColor": "rgb(0, 122, 193)",
             "bonus": false
+          },
+          {
+            "date": "2026-05-28",
+            "joueur": "DYLAN HARPER",
+            "score": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
+            "bonus": false
           }
         ]
       },
@@ -1291,6 +1371,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-27T22:59:09.247Z",
+  "updatedAt": "2026-05-28T12:11:25.414Z",
   "currentChampweek": 7
 }
