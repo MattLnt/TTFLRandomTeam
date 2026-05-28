@@ -263,10 +263,10 @@
           },
           {
             "date": "2026-05-28",
-            "joueur": null,
+            "joueur": "STEPHON CASTLE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1085,10 +1085,10 @@
           },
           {
             "date": "2026-05-28",
-            "joueur": null,
+            "joueur": "JULIAN CHAMPAGNIE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1222,10 +1222,10 @@
           },
           {
             "date": "2026-05-28",
-            "joueur": null,
+            "joueur": "STEPHON CASTLE",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1371,6 +1371,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-28T19:42:07.140Z",
+  "updatedAt": "2026-05-28T22:34:04.403Z",
   "currentChampweek": 7
 }
