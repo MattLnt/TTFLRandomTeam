@@ -1149,10 +1149,10 @@
           },
           {
             "date": "2026-05-30",
-            "joueur": null,
+            "joueur": "DEVIN VASSELL",
             "score": null,
-            "picked": false,
-            "teamColor": null,
+            "picked": true,
+            "teamColor": "rgb(0, 0, 0)",
             "bonus": false
           }
         ]
@@ -1451,6 +1451,6 @@
       "joueursUtilises": []
     }
   },
-  "updatedAt": "2026-05-30T18:53:25.364Z",
+  "updatedAt": "2026-05-30T19:12:53.960Z",
   "currentChampweek": 7
 }
